@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const API = {
-  searchBook() {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=harry+potter&key=AIzaSyA-sSrG5lyOYe0HUk19h6HzsAdG7VJTR2w")
+  searchBook(query) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyCHH5yFYgW_tFBPSXt9xKTUwgiJ4ApzOY0`)
   },
   saveBook(bookObj) {
     return axios.post("")

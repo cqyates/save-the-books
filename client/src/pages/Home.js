@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import API from "../utils/API"
+import API from "../utils/API";
+import BookContainer from "../components/BookContainer"
 class Home extends Component {
   state = {
     books: [],
-    query: ""
+    query: "Uylesses"
   }
   componentDidMount() {
-    API.searchBook().then(res => {
+    API.searchBook(this.state.query).then(res => {
       console.log(res)
+      this.setState({books: res.data.items})
     })
   }
   render() {
     return (
-      <h1> Im the Home Page </h1>
+     <BookContainer books={this.state.books} />
     )
   }
 }
